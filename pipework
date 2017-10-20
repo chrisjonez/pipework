@@ -431,7 +431,7 @@ else
 	    ;;
 	  "")
 	    if installed ipcalc; then
-	      eval $(ipcalc -b $IPADDR)
+	      eval $(docker run busybox:1.27 ipcalc -b $IPADDR) 
 	      ip netns exec "$NSPID" ip "$FAMILY_FLAG" addr add "$IPADDR" brd "$BROADCAST" dev "$CONTAINER_IFNAME"
 	    else
 	      ip netns exec "$NSPID" ip "$FAMILY_FLAG" addr add "$IPADDR" dev "$CONTAINER_IFNAME"
