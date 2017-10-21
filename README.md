@@ -6,19 +6,19 @@ Typical output:
 ```
 $ ./test.sh 
 ...
-ping from chrisnode_no_vlan_2 to 1.2.3.2
+ping from chrisnode_no_vlan_2 to 1.2.3.2                      //ping self 1.2.3.2->1.2.3.2
 PING 1.2.3.2 (1.2.3.2): 56 data bytes
-64 bytes from 1.2.3.2: seq=0 ttl=64 time=0.055 ms
-64 bytes from 1.2.3.2: seq=1 ttl=64 time=0.057 ms
+64 bytes from 1.2.3.2: seq=0 ttl=64 time=0.055 ms             //fine
+64 bytes from 1.2.3.2: seq=1 ttl=64 time=0.057 ms             //fine
 
 --- 1.2.3.2 ping statistics ---
 2 packets transmitted, 2 packets received, 0% packet loss
 round-trip min/avg/max = 0.055/0.056/0.057 ms
-ping from chrisnode_no_vlan_2 to 1.2.3.3
-PING 1.2.3.3 (1.2.3.3): 56 data bytes
+ping from chrisnode_no_vlan_2 to 1.2.3.3                      //now ping the other container 1.2.3.2->1.2.3.3
+PING 1.2.3.3 (1.2.3.3): 56 data bytes                      
 
 --- 1.2.3.3 ping statistics ---
-2 packets transmitted, 0 packets received, 100% packet loss
+2 packets transmitted, 0 packets received, 100% packet loss   /whoops?
 chrisnode_no_vlan_2 can't ping 1.2.3.3
 
 $ docker --version
