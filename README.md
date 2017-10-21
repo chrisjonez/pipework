@@ -26,7 +26,7 @@ I've tested this out on two environments and the same behaviour seems to persist
 
 FWIW if the bridge is created using `docker create network -o com.docker.network.bridge.name="bridge-name"...` before subsequently running `pipework` with the same bridge name then all is fine.
 
-Why still use `pipework` when Docker networking is much improved? Unfortunately I have a use-case where I need to pin a container to multiple network domain's and their specificly named network interfaces (vlans) - docker currently doesn't support this: https://github.com/moby/moby/issues/25181
+Why still use `pipework` when Docker networking is much improved? Unfortunately I have a usecase where I need to simulate in Docker a physical tolopology where I need to pin a container to multiple network domain's and respective hardcoded network interface names (vlans) - docker currently doesn't support this: https://github.com/moby/moby/issues/25181
 
 Another workaround is to use open vSwitch - you can see this at work by invoking: `test.sh ovs`.  You'll need Open vSwitch installed on your host. Something like: `sudo apt-get install openvswitch-switch`
 
