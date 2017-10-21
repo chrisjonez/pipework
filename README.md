@@ -20,6 +20,9 @@ PING 1.2.3.3 (1.2.3.3): 56 data bytes
 --- 1.2.3.3 ping statistics ---
 2 packets transmitted, 0 packets received, 100% packet loss
 chrisnode_no_vlan_2 can't ping 1.2.3.3
+
+$ docker --version
+Docker version 17.03.1-ce, build c6d412e
 ```
 
 I've tested this out on two environments and the same behaviour seems to persist.  
