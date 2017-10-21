@@ -1,7 +1,7 @@
 DOMAIN=1.2.3
 GATEWAY=$DOMAIN.1
 NUM=2; 
-#bridge type can be br or ovs
+#bridge type can be br or ovs, br by default
 BRTYPE=$1
 BRTYPE=${BRTYPE:-br}
 BRIDGE=${BRTYPE}cj_novlan
@@ -35,7 +35,7 @@ do
  #sudo ./pipework ${BRIDGE} -i ${INTERFACE} $(sudo docker run -tid --name ${CONTAINER} -h ${HOST} busybox:1.27 /bin/sh) ${IP}/24@${GATEWAY}
 done
 
-#ping test
+#ping test, pings all containers including self
 for i in `seq 1 ${NUM}`
 do
  INDEX=$((i+1))
