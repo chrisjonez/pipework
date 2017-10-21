@@ -1,5 +1,29 @@
 # test.sh
-Demostrates a potential problem with `pipework` and/or Docker re: Container to Container connectivity.  `test.sh` script shows that containers run with `--net='none'` that are  subsequently connected to the same linux bridge using `pipework` cannot ping each other.  I've tested this on two environments and the same behaviour seems to persist.  
+Demostrates a potential problem with `pipework` and/or Docker re: Container to Container connectivity.  `test.sh` script shows that containers run with `--net='none'` that are  subsequently connected to the same linux bridge using `pipework` cannot ping each other.  
+
+Typical output:
+
+`$ ./test.sh 
+chrisnode_no_vlan_2
+chrisnode_no_vlan_2
+chrisnode_no_vlan_3
+chrisnode_no_vlan_3
+ping from chrisnode_no_vlan_2 to 1.2.3.2
+PING 1.2.3.2 (1.2.3.2): 56 data bytes
+64 bytes from 1.2.3.2: seq=0 ttl=64 time=0.055 ms
+64 bytes from 1.2.3.2: seq=1 ttl=64 time=0.057 ms
+
+--- 1.2.3.2 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.055/0.056/0.057 ms
+ping from chrisnode_no_vlan_2 to 1.2.3.3
+PING 1.2.3.3 (1.2.3.3): 56 data bytes
+
+--- 1.2.3.3 ping statistics ---
+2 packets transmitted, 0 packets received, 100% packet loss
+chrisnode_no_vlan_2 can't ping 1.2.3.3`
+
+I've tested this on two environments and the same behaviour seems to persist.  
 
 FWIW if the bridge is created using `docker create network -o com.docker.network.bridge.name="bridge-name"...` before subsequently running `pipework` with the same bridge name then all is fine.
 
