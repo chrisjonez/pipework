@@ -27,7 +27,7 @@ Docker version 17.03.1-ce, build c6d412e
 
 I've tested this out on two environments and the same behaviour seems to persist.  
 
-FWIW if the bridge is created using `docker create network -o com.docker.network.bridge.name="bridge-name"...` before subsequently running `pipework` with the same bridge name then all is fine.
+FWIW if the bridge is created using `docker create network -o com.docker.network.bridge.name="bridge-name"...` before running `pipework` with the same bridge name then all is fine.
 
 Why still use `pipework` when Docker networking is much improved? Unfortunately I have a usecase where I need to simulate in Docker an existing physical tolopology: including multiple network vlans - I need to control the container's interface names and associated domains - docker currently doesn't support this: https://github.com/moby/moby/issues/25181
 
