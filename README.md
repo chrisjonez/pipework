@@ -1,5 +1,5 @@
 # test.sh
-Demostrates a potential problem with pipework and/or Docker re: Container to Container connectivity.  `test.sh` script shows that containers run with `--net='none'` that are  subsequently connected to the same linux bridge using `pipework` cannot ping each other.  FWIW if the bridge is created using `docker create network -o com.docker.network.bridge.name="bridge-name"...` before suebsequently running `pipework` with the same bridge name then all is fine.
+Demostrates a potential problem with `pipework` and/or Docker re: Container to Container connectivity.  `test.sh` script shows that containers run with `--net='none'` that are  subsequently connected to the same linux bridge using `pipework` cannot ping each other.  FWIW if the bridge is created using `docker create network -o com.docker.network.bridge.name="bridge-name"...` before suebsequently running `pipework` with the same bridge name then all is fine.
 
 Why still use `pipework` when Docker networking is much improved? Unfortunately I have a use-case where I need to pin a container to multiple network domain's and their specificly named network interfaces (vlans) - docker currently doesn't support this: https://github.com/moby/moby/issues/25181
 
