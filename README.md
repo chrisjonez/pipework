@@ -30,6 +30,8 @@ Why still use `pipework` when Docker networking is much improved? Unfortunately 
 
 Another workaround is to use open vSwitch - you can see this at work by invoking: `test.sh ovs`.  You'll need Open vSwitch installed on your host. Something like: `sudo apt-get install openvswitch-switch`
 
+What follows, for completeness, is the original `pipework` documentation at fork.....
+
 # Pipework
 
 **_Software-Defined Networking for Linux Containers_**
