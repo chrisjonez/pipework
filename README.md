@@ -3,7 +3,7 @@ Demostrates a potential problem with `pipework` and/or Docker re: Container to C
 
 Why still use `pipework` when Docker networking is much improved? Unfortunately I have a use-case where I need to pin a container to multiple network domain's and their specificly named network interfaces (vlans) - docker currently doesn't support this: https://github.com/moby/moby/issues/25181
 
-Another workaround is use open vSwitch - you can see this at work by invoking: `test.sh ovs`
+Another workaround is use open vSwitch - you can see this at work by invoking: `test.sh ovs`.  You'll need Open vSwitch installed on your host. Something like: `sudo apt-get install openvswitch-switch`
 
 # Pipework
 
