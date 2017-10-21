@@ -3,7 +3,8 @@ Demostrates a potential problem with `pipework` and/or Docker re: Container to C
 
 Typical output:
 
-`$ ./test.sh 
+```
+$ ./test.sh 
 chrisnode_no_vlan_2
 chrisnode_no_vlan_2
 chrisnode_no_vlan_3
@@ -21,7 +22,8 @@ PING 1.2.3.3 (1.2.3.3): 56 data bytes
 
 --- 1.2.3.3 ping statistics ---
 2 packets transmitted, 0 packets received, 100% packet loss
-chrisnode_no_vlan_2 can't ping 1.2.3.3`
+chrisnode_no_vlan_2 can't ping 1.2.3.3
+```
 
 I've tested this on two environments and the same behaviour seems to persist.  
 
