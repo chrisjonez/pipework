@@ -31,7 +31,7 @@ FWIW if the bridge is created using `docker create network -o com.docker.network
 
 Why still use `pipework` when Docker networking is much improved? Unfortunately I have a usecase where I need to simulate in Docker an existing physical tolopology: including multiple network vlans - I need to control the container's interface names and associated domains - docker currently doesn't support this: https://github.com/moby/moby/issues/25181
 
-Another workaround is to use open vSwitch - you can see this at work by invoking: `test.sh ovs`.  You'll need Open vSwitch installed on your host. Something like: `sudo apt-get install openvswitch-switch`
+Another workaround is to use [Open vSwitch](http://openvswitch.org/) - you can see this at work by invoking: `test.sh ovs`.  You'll need Open vSwitch installed on your host. Something like: `sudo apt-get install openvswitch-switch`
 
 What follows, for completeness, is the original `pipework` documentation at fork.....
 
