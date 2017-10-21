@@ -1,5 +1,5 @@
 # test.sh
-This is fork of  https://github.com/jpetazzo/pipework to demostrate a potential problem with `pipework` and/or Docker re: Container to Container connectivity.  `test.sh` shows that containers run with `--net='none'` that are  subsequently connected to the same linux bridge using `pipework` cannot ping each other.  
+This is fork of  [@jpetazzo/pipework](https://github.com/jpetazzo/pipework) to demostrate a potential problem with `pipework` and/or Docker re: Container to Container connectivity.  `test.sh` shows that containers run with `--net='none'` that are  subsequently connected to the same linux bridge using `pipework` cannot ping each other.  
 
 Typical output:
 
