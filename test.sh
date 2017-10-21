@@ -1,5 +1,6 @@
 DOMAIN=1.2.3
 GATEWAY=$DOMAIN.1
+#two containers
 NUM=2; 
 #bridge type can be br or ovs, br by default
 BRTYPE=$1
