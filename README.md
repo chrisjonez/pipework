@@ -5,10 +5,7 @@ Typical output:
 
 ```
 $ ./test.sh 
-chrisnode_no_vlan_2
-chrisnode_no_vlan_2
-chrisnode_no_vlan_3
-chrisnode_no_vlan_3
+...
 ping from chrisnode_no_vlan_2 to 1.2.3.2
 PING 1.2.3.2 (1.2.3.2): 56 data bytes
 64 bytes from 1.2.3.2: seq=0 ttl=64 time=0.055 ms
